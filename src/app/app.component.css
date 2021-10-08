@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  transform: rotate(-30deg);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: -13px;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  transform: rotate(30deg);
+  margin: 3px;
+  border: 3px #c3a303 solid;
+  border-radius: 100%;
+  font-size: 25px;
+  background-color: #2d2d2d;
+  cursor: pointer;
+}

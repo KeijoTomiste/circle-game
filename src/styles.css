@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #18181b;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
