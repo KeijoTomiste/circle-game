@@ -1,13 +1,14 @@
+import { BehaviorSubject } from "rxjs";
 
 export class Circle {
   private id: [number, number];
-  private value: number;
-  private maxValue: number;
+  private readonly value: BehaviorSubject<number>;
+  private readonly maxValue: number;
   private siblingNodes = new Set<Circle>();
 
   constructor(id: [number, number], value: number, maxValue: number) {
     this.id = id;
-    this.value = value;
+    this.value = new BehaviorSubject(value);
     this.maxValue = maxValue;
   }
 
@@ -20,13 +21,13 @@ export class Circle {
   }
 
   public increaseValue() {
-    let newValue = this.value + 1;
+    let newValue = this.value.getValue() + 1;
 
     if (newValue > this.maxValue) {
       newValue = 1;
     }
 
-    this.value = newValue;
+    this.value.next(newValue);
   }
 
   public getSiblingNodes() {

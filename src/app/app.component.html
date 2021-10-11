@@ -2,8 +2,7 @@
 <div class="container">
   <div *ngFor="let row of playField" class="row">
     <span *ngFor="let circle of row" class="circle" (click)="increaseCircleValue(circle)">
-      <!-- TODO: optimise it to not be slow -->
-      {{ circle.getValue() }}
+      {{ circle.getValue() | async }}
     </span>
   </div>
 </div>
